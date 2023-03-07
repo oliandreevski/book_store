@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useAtom } from "jotai";
+import { useEffect, useState } from "react";
+import "./App.css";
+import Book from "./components/Book";
+import BookList from "./components/Book-List";
+import Filters from "./components/Genre-filter";
+
+import Navbar from "./components/Navbar";
+import { booksAtom } from "./store";
 
 function App() {
+  const [, setBooks] = useAtom(booksAtom);
+
+  const fetchBooks = async () => {
+    const res = await fetch("http://localhost:3000/listofbooks.json");
+    const data = await res.json();
+    setBooks(data.sort((a, b) => a.author.localeCompare(b.author)));
+  };
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <BookList />
+    </>
   );
 }
 

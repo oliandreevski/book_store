@@ -1,0 +1,27 @@
+.genre-select {
+  margin: 4px 5px;
+  background-color: transparent;
+  border: 3px solid var(--color-light);
+  border-radius: 3px;
+  color: var(--color-light);
+  padding: 0 6px;
+}
+
+.genre-select__item {
+  color: var(--color-dark);
+}
+
+@media (max-width: 930px) {
+  .genre-select {
+    height: 38px;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 556px) {
+  .genre-select {
+    height: 38px;
+    padding: 0 10px;
+    margin: 0;
+  }
+}

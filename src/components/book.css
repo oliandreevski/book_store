@@ -1,0 +1,63 @@
+.card {
+  display: inline-block;
+  position: relative;
+  width: 230px;
+  height: 390px;
+  box-shadow: 0 0 20px var(--color-gray-light);
+  margin: 25px;
+  padding: 10px 10px 0 10px;
+  vertical-align: top;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.card__cover {
+  border: 2px solid var(--color-gray-light);
+  height: 80%;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__title {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.card__author {
+  font-size: 15px;
+}
+
+.card__genre {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+
+.card__span {
+  font-size: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  line-height: 20px;
+  transform: rotate(45deg);
+  width: 108px;
+  display: block;
+  background: var(--color-primary);
+  background: linear-gradient(
+    var(--color-secondary) 0%,
+    var(--color-secondary-2) 100%
+  );
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px;
+  right: -21px;
+}
